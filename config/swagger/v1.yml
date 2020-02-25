@@ -5,6 +5,7 @@ info:
   version: "1.0.2"
 
 servers:
+  - url: https://integrador-vst-survey-backend.herokuapp.com
   - url: http://localhost:5000/api/v1
 
 paths:
