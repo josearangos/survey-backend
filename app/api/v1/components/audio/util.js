@@ -9,6 +9,7 @@ const create = async (body) => new Audio({
   speakerID: body.speakerID,
   url: body.url,
   type: body.type,
+  description: body.description,
 }).save();
 
 const remove = async (id) => Audio.findOneAndRemove({ id });
