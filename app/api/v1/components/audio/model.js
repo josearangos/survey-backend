@@ -13,6 +13,10 @@ const schema = {
     type: String,
     required: true,
   },
+  type: {
+    type: String,
+    required: true,
+  },
 };
 
 const model = createModel('Audio', schema);
