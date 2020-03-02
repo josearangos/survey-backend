@@ -253,11 +253,7 @@ paths:
         '200':
           description: Response.
         '500':
-          description: Internal server error.    
-
-
-
-
+          description: Internal server error.
 
   /utterance:
     get:
@@ -425,6 +421,23 @@ paths:
           description: Response.
         '500':
           description: Internal server error.  
+
+  /survey/random:
+    get:
+      tags:
+        - Survey
+      parameters:
+        - in: query
+          name: n
+          schema:
+            type: integer
+          description: Number of random samples. Default = 20.
+      summary: Retrieves n-randomly-sampled utterances.
+      responses:
+        '200':
+          description: Response.
+        '500':
+          description: Internal server error.
 
 
 components:
