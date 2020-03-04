@@ -59,6 +59,27 @@ const create = async (req, res) => {
   }
 };
 
+const update = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { body } = req;
+
+    console.log(id);
+    console.log(body);
+
+    await util.update(id, body);
+
+    return res
+      .status(httpStatus.OK)
+      .send({ message: 'Updated' });
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(httpStatus.INTERNAL_SERVER_ERROR)
+      .send({ message: 'Internal server error' });
+  }
+};
+
 const remove = async (req, res) => {
   try {
     const { id } = req.params;
@@ -101,6 +122,7 @@ module.exports = {
   getById,
   getAll,
   create,
+  update,
   remove,
   randomSample,
 };

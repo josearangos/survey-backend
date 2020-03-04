@@ -12,6 +12,7 @@ router.route('/random')
 
 router.route('/:id')
   .get((req, res) => controller.getById(req, res))
+  .put((req, res) => controller.update(req, res))
   .delete((req, res) => controller.remove(req, res));
 
 module.exports = router;

@@ -12,6 +12,8 @@ const create = async (body) => new Audio({
   description: body.description,
 }).save();
 
+const update = async (id, body) => Audio.findOneAndUpdate({ id }, body);
+
 const remove = async (id) => Audio.findOneAndRemove({ id });
 
 const randomSample = async (n) => Audio.aggregate().sample(n);
@@ -20,6 +22,7 @@ module.exports = {
   getAll,
   getById,
   create,
+  update,
   remove,
   randomSample,
 };
